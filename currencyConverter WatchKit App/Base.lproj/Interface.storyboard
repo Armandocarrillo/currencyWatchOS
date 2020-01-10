@@ -1,15 +1,47 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15702" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--WatchFX-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="Home" title="WatchFX" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="currencyConverter_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label height="0.33000000000000002" alignment="center" text="500" textAlignment="center" id="r8n-GR-oyM">
+                            <fontDescription key="font" type="system" weight="black" pointSize="52"/>
+                        </label>
+                        <slider width="1" height="0.33000000000000002" alignment="left" continuous="YES" value="500" maximum="1000" steps="50" id="kF2-jW-DAU">
+                            <connections>
+                                <action selector="amountChanged:" destination="AgC-eL-Hgc" id="R5R-xH-siL"/>
+                            </connections>
+                        </slider>
+                        <group width="1" height="0.33000000000000002" alignment="left" id="8Mt-c2-C2J">
+                            <items>
+                                <picker width="0.66000000000000003" height="1" alignment="left" id="LlM-eI-bVB">
+                                    <connections>
+                                        <action selector="baseCurrencyChanged:" destination="AgC-eL-Hgc" id="XeM-aW-fcL"/>
+                                    </connections>
+                                </picker>
+                                <button width="0.40000000000000002" widthAdjustment="-10" height="1" alignment="left" title="GO" id="MyZ-JZ-7fG">
+                                    <connections>
+                                        <action selector="convertTapped" destination="AgC-eL-Hgc" id="NGY-bj-UFL"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="amountLabel" destination="r8n-GR-oyM" id="FQS-Pc-xJk"/>
+                        <outlet property="amountSlider" destination="kF2-jW-DAU" id="Hba-Gk-nVd"/>
+                        <outlet property="currencyPicker" destination="LlM-eI-bVB" id="vl5-Ot-Tio"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="34" y="51"/>
         </scene>
     </scenes>
 </document>
