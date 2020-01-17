@@ -38,10 +38,18 @@
                         <outlet property="amountLabel" destination="r8n-GR-oyM" id="FQS-Pc-xJk"/>
                         <outlet property="amountSlider" destination="kF2-jW-DAU" id="Hba-Gk-nVd"/>
                         <outlet property="currencyPicker" destination="LlM-eI-bVB" id="vl5-Ot-Tio"/>
+                        <segue destination="ieC-KF-Bn3" kind="relationship" relationship="nextPage" id="eeg-nR-lwR"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="51"/>
+            <point key="canvasLocation" x="-98" y="49"/>
+        </scene>
+        <!--Currencies-->
+        <scene sceneID="OFV-Wr-KCQ">
+            <objects>
+                <controller identifier="Currencies" id="ieC-KF-Bn3"/>
+            </objects>
+            <point key="canvasLocation" x="120" y="49"/>
         </scene>
     </scenes>
 </document>
